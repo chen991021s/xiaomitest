@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>login</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.bigbox{
+				width: 100%;
+				height: 100%;
+			}
+			.top{
+				width: 100%;
+				height: 100px;
+			}
+			.imgdiv{
+				width: 60px;
+				height: 90px;
+				float: left;	
+				margin-top: 20px;
+				margin-left: 100px;
+			}
+			#img1{
+				width: 50px;
+				height: 50px;
+			}
+			.midiv{
+				width: 300px;
+				height: 80px;	
+				float: left;
+			}
+			ul li{
+				list-style-type: none;
+			}
+			.font1{
+				width: 120px;
+				height: 35px;
+				font-size: 30px;
+				margin-top: 15px;
+			}
+			.font2{
+				font-size: 10px;
+				color: grey;
+				padding-top: 5px;
+			}
+			.content{
+				width: 100%;
+				height: 560px;			
+				position: relative;
+			}
+			.imgdiv2{
+				width: 100%;
+				height: 560px;	
+				position: absolute;
+			}
+			.imgdiv2>img{
+				width: 100%;
+				height: 560px;
+				cursor: pointer;
+			}
+			.login{
+				width: 400px;
+				height: 550px;
+				background-color: white;
+				position: absolute;
+				margin-top: 30px;
+				right: 40px;
+			}
+			#logintop>ul>li{
+				width: 150px;
+				height: 40px;
+				cursor: pointer;
+				font-size: 25px;
+				float: left;
+				margin-top: 30px;
+				padding-left:40px;
+			}
+			.logtop{
+				color: orangered;
+			}
+			#log{
+				border-right:2px solid gainsboro;
+			}
+			#user1{
+				margin-top: 40px;
+			}
+			.psd{
+				width:310px;
+				height: 50px;
+				margin-top: 20px;
+				border:1px solid gainsboro;
+				margin-left: 35px;
+				padding-left: 20px;
+			}
+			.ts{
+				width:310px;
+				margin-left: 35px;
+				margin-top: 8px;
+			}
+			#dl{
+				width:330px;
+				margin-top: 17px;
+				background-color: orangered;
+				color: white;
+				font-size: 17px;
+			}
+			#user2{
+				display: none;
+			}
+			#logintop>ul>li:hover{
+				color: orangered;
+			}
+			#user1_1{
+				width: 390px;
+				height: 50px;
+				
+			}
+			#user1_1_1{
+				width: 170px;
+				height: 20px;
+				color: orangered;
+				float: left;
+				margin-top: 10px;
+				margin-left: 35px;
+				font-size: 14px;
+				cursor: pointer;
+			}
+			#user1_1_2{
+				width: 150px;
+				height: 20px;
+				color: grey;
+				right: 2px;
+				float: right;
+				margin-top: 10px;
+				font-size: 14px;
+				cursor: pointer;
+			}
+			a{
+				color: gray;
+				border-bottom: none;
+			}
+			a:link{
+				text-decoration: none;
+			}
+			a:hover{
+				color: orangered;
+			}
+		</style>
+		<script src="js/jquery-1.12.4.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			$(function(){
+				//切换
+				$("#logintop>ul>li").each(function(index){
+					$(this).click(function(){
+//						alert(index);
+						//清除所有li的字体颜色
+						$("#logintop>ul>li").removeClass("logtop");
+						//给当前点击的li设置颜色
+						$(this).addClass("logtop");
+						//隐藏所有内容
+						$("#user>div").hide();
+						//设置对应板块显示
+						$("#user>div:eq("+index+")").show();
+					})
+				})
+			})
+			
+			//登录验证
+			var number1=false;
+			function check(){
+				var name=document.getElementById("username").value;
+				var psd=document.getElementById("userpsd").value;
+				var img=document.createElement('img');
+				if(name==""){
+					document.getElementById("tss").innerText="账号不能为空";
+					document.getElementById("tss").style.color="red";
+					return false;
+				}else if(psd==""){
+					document.getElementById("tss").innerText="密码不能为空";
+					document.getElementById("tss").style.color="red";
+					return false;
+				}else {
+					return true;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div class="bigbox">
+			<div class="top">
+				<div class="imgdiv">
+					<img src="https://account.xiaomi.com/static/res/28f08d0/account-static/respassport/acc-2014/img/milogo.png" id="img1"/>
+				</div>
+				<div class="midiv">
+					<ul>
+						<li class="font1">小米商城</li>
+						<li class="font2">让每个人都享受科技的乐趣</li>
+					</ul>					
+				</div>				
+			</div>
+			<div class="content">  
+				<div class="imgdiv2">
+					<img src="img/QQ截图20190919145237.png"/>
+				</div>
+				<div class="login">
+					<div id="logintop">
+						<ul>
+							<li class="logtop" id="log">账号登录</li>
+							<li>扫码登录</li>
+						</ul>
+					</div>		
+					<div id="user">
+						<div id="user1">
+							<form action="index.html" method="get" onsubmit="return check()">
+								<ul>
+									<li><input type="text" name="username" placeholder="邮箱/手机号码/小米ID" class="psd" id="username"/></li>
+									<li><input type="text" name="userpad" placeholder="密码"class="psd" id="userpsd"/></li>
+									<li class="ts" id="tss"></li>
+									<li><input type="submit" value="登录" class="psd" id="dl"/></li>
+								</ul>
+							</form>	
+							<div id="user1_1">
+								<div id="user1_1_1">
+									手机短信登录/注册
+								</div>
+								<div id="user1_1_2">
+									<a href="zhuce.html">立即注册</a>
+									<a href="#">|忘记密码？</a>
+								</div>
+							</div>
+						</div>
+						<div id="user2">
+							<ul>
+								<li><input type="text" name="username"/></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			
+			</div>
+		</div>
+	</body>
+</html>

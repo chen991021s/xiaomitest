@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+				
+			}
+			#divbig{
+				width: 410px;
+				height: 440px;
+				margin: auto;
+			}
+			#divfrist{
+				width: 396px;
+				height: 50px;
+				text-align: center;
+			}
+			#divtwo{
+				width: 396px;
+				height: 50px;
+			}
+			#divthree{
+				width: 396px;
+				height: 50px;
+				text-align: center;
+			}
+			.mi2{
+				 width: 300px;
+				 height:50px;
+				 font-size:30px;
+			}
+			#divfour{
+				width: 405px;
+				height: 70px;
+				margin-top: 20px;
+			}
+			#divfive{
+				width: 405px;
+				height: 200px;
+			}
+			#divfive input{
+				width: 370px;
+				height: 40px;
+				margin-bottom: 20px;
+			}
+			#tj{
+				text-align: center;
+				background-color: darkorange;
+				border: none;
+				color: white;
+				font-size: 20px;
+				margin-top: 10px;
+			}
+			#fonts{
+				color: gray;
+				font-size: 15px;
+			}
+            
+		</style>
+		<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+		<script type="text/javascript">
+			//获取电话号码
+			$(function(){
+				var tel=localStorage.getItem("pone").split(',');
+				var str=tel[0];
+				$("#names").append(str);
+			})
+			
+			//密码验证
+			var number1=false;
+			var number2=false;
+			function blurPwd(){
+				var pwds=document.getElementById("pwd").value;
+				var reg=/^[0-9]{8,16}$/;///^(?![a-zA-Z]+$)(?!\d+$)(?![!@#$%^&*]+$)(?![a-zA-Z\d]+$)(?![a-zA-Z!@#$%^&*]+$)(?![\d!@#$%^&*]+$)[a-zA-Z\d!@#$%^&*]+$/;			
+				if (pwds.length>=8&&pwds.length<=16) {
+					if(reg.test(pwds)){
+						number1= true;
+					}else if(!reg.test(pwds)){
+						document.getElementById("fonts").style.color="red";
+						number1= false;
+					}
+				}else if(pwds.length<=0){
+					document.getElementById("fonts").innerText="请输入密码";
+					document.getElementById("fonts").style.color="red";
+					number1= false;
+				}else{
+					document.getElementById("fonts").innerText="密码长度8-16为，数字，字母，字符至少包含两种";
+					document.getElementById("fonts").style.color="red";
+					number1= false;
+				}
+			}
+			function blurPwd1(){
+				var newpsds=document.getElementById("newpsd").value;
+				var pwds=document.getElementById("pwd").value;
+				var reg=/^(?![a-zA-Z]+$)(?!\d+$)(?![!@#$%^&*]+$)(?![a-zA-Z\d]+$)(?![a-zA-Z!@#$%^&*]+$)(?![\d!@#$%^&*]+$)[a-zA-Z\d!@#$%^&*]+$/;			
+				if (newpsds==pwds){
+//					if(newpsds.length<=0){
+//						document.getElementById("fonts").innerText="请输入确认密码";
+//						document.getElementById("fonts").style.color="red";
+//						number1= false;
+//					}elseif(newpsds.length<8||newpsds.length>16){
+//						document.getElementById("fonts").innerText="密码长度8-16为，数字，字母，字符至少包含两种";
+//						document.getElementById("fonts").style.color="red";
+//						number1= false;
+//					}
+					number2= true;
+				}else {
+					number2= false;
+				}
+			}
+			function check(){
+				var newpsds=document.getElementById("newpsd").value;
+				var pwds=document.getElementById("pwd").value;	
+				if(number1==true&&number2==true){
+					localStorage.setItem("pwds",pwds);
+					return true;		
+				}else{
+					return false;
+					
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="divbig">
+			<form action="log.html" method="get" onsubmit="return check()">
+			<div id="divfrist">
+				<img src="https://account.xiaomi.com/static/res/28f08d0/account-static/respassport/acc-2014/img/milogo.png" class="img1"/>
+			</div>
+			<div id="divtwo"></div>
+			<div id="divthree">
+				<span class="mi2">注册小米账号</span>
+			</div>
+			<div id="divfour">
+				<span style="font-size: 15px; color: grey;">你注册的手机号码为<span style="color: darkorange; font-size:15px;" id="names"></span><br/>请设置你的密码</span>
+			</div>
+			<div id="divfive">		
+					<input type="text" placeholder="请输入密码" id="pwd" onblur="blurPwd()"/><br />
+					<input type="text" placeholder="请输入确认密码" id="newpsd" onblur="blurPwd1()"/><br />
+					<span id="fonts">密码长度8-16为，数字，字母，字符至少包含两种</span><br />
+					<input type="submit" value="提交" id="tj"/>
+			</div>
+			</form>
+		</div>
+	</body>
+</html>

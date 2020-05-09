@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+        <style type="text/css">
+            *{
+            	margin: 0;
+            	padding: 0;
+            }
+            #bigbox{
+            	width: 100%;
+            	height: 100%;
+            }
+            #topbox{
+            	width: 100%;
+            	height: 40px;
+            	background-color: #333333;
+            }
+            #tops{
+            	width: 1320px;
+            	height: 40px;
+            	margin: auto;
+            	position: relative;
+            }
+            .topul{
+            	float: left;
+            	
+            }
+            .topul li{
+            	width: 60px;
+            	height: 25px;
+            	float: left;
+            	list-style-type: none;
+            	font-size: 9px;
+            	line-height: 20px;
+            	text-align: center;
+            	padding-top: 10px;
+            	border-right:1px solid #3C423C;
+            }
+            .topul li a{
+                display: block;
+            	color: #808080;
+            }
+            .topul li a:hover{
+            	color: white;
+            }
+            .topul li:hover{
+            	color: white;
+            	cursor: pointer;
+            }
+            .song{
+            	width: 100px;
+            	height: 100px;
+            	position: absolute;
+            	z-index: 999;
+            }
+            #topright{
+            	width: 300px;
+            	float: right;
+            }
+            #topright li{
+            	width: 80px;
+            	height: 40px;
+            	font-size: 9px;
+            	line-height: 40px;
+            	text-align: center;
+            	float: left;
+            	list-style-type: none;
+            	border-right:1px solid #3C423C;
+            }
+            #topright a{
+            	display: block;
+            	color: grey;
+            }
+            a:link{
+            	text-decoration: none;
+            } 
+            #topright a:hover{
+            	color: white;
+            }
+            #top2box{
+            	width: 1320px;
+            	height: 108px;
+            	margin: auto;
+            }
+            #top2left{
+            	width: 50px;
+            	height: 100px;
+            	line-height: 150px;
+            	float: left;
+            	overflow: hidden;	
+            }
+            #top2left_img{
+            	width: 122px;
+            	height: 100px;
+            	transform: translateX(-50px);/*水平向左平移50px*/
+            }
+            #imgers{
+            	width: 50px;
+                height: 49px;
+            }
+            #imgers2{
+            	width: 50px;
+            	margin-left: -5px;
+            }
+            #top2left_img:hover{
+            	transform: translateX(0px);/*向右边平移50px*/
+            	transition: ease-in 0.3s; /*延迟0.3秒执行*/
+            }
+            #top2centen{
+            	width: 820px;
+            	height: 100px;	
+            	float: left;
+            	margin-top: 10px;
+            	margin-left: 80px;
+            }
+            #top2centen ul li{
+            	width: 90px;
+            	height: 64px;	
+            	float: left;
+            	padding-top: 35px;
+            	text-align: center;
+            	list-style-type: none;
+            	cursor: pointer;
+            }
+            #top2centen>ul>li:hover{
+            	color: orange;
+            }
+            #top2centen ul li ul{
+            	height: 250px;
+            	width: 100%;
+            	background-color: white;
+            	margin-left: -230px;
+            	margin-top: 43.5px;
+            	position: absolute;
+            	z-index: 999;
+            }
+            #top2centen ul li ul li{
+            	width: 200px;
+            	height: 206px;
+            	text-align: center;	
+            	list-style-type: none;
+            	float: left;
+            }
+            #top2centen>ul>li>ul>li>img{
+            	width: 186px;
+            	height: 166px;
+            }
+            #top2centen_1{
+                width: 100px;
+                height: 100px;
+                float: left;
+                line-height: 90px;
+            }
+           
+            #top2centen_1:hover{
+                 cursor: pointer;
+            }
+            #top2right{
+            	float: right;
+            	width: 316px;
+            	height: 100px;	
+            	margin-top: 10px;
+            }
+            #top2ul{
+            	width: 267px;
+            	height: 110px;
+            	float: left;
+            }
+            #top2ul ul li{
+            	list-style-type: none;
+            }
+            #top2right input{
+            	width: 265px;
+            	height: 42px;
+            	line-height: 40px;
+            	text-align: center;
+            	margin-top: 30px;
+            }
+            #top2right ul li ul{
+            	width: 265px;
+            	height: 320px;
+            	border: 1px solid orangered;
+            	background-color: white;
+            	position: absolute;
+            	z-index: 999;
+            	display: none;
+            	margin-top: 75px;
+            }
+            #top2right ul li ul li{
+            	width: 258px;
+            	height: 30px;
+            	margin-left:8px;
+            }
+            #top2right ul li ul li a{
+            	color: black;
+            }
+            #top2rightimg{
+            	height: 40px;
+            	width: 40px;
+            	float: left;
+            	margin-top: 30px;
+            	padding-top: 5px;
+            	padding-left: 5px;
+            	border: 1px solid gray;
+            	cursor: pointer;
+            }
+            #shuru{
+            	position: absolute;
+            	outline: none;/*本身的css*/
+            }
+            #btt1{
+            	position: absolute;
+            	margin-left: 70px;
+            	margin-top: 45px;
+            	background-color: gainsboro;
+            	border: none;
+            	color: gray;
+            }
+            #btt1:hover{
+            	background-color: orangered;
+            	cursor: pointer;
+            }
+            #btt2{
+            	position: absolute;
+            	margin-left: 170px;
+            	margin-top: 45px;
+            	background-color: gainsboro;
+            	border: none;
+            	color: gray;
+            }
+            #btt2:hover{
+            	cursor: pointer;
+            	background-color: orangered;
+            }
+            #content{
+            	width:100%;
+            	height: 1100px;
+            	background-color: #EEEEEE;
+            }
+            #content2{
+            	width:1320px;
+            	height: 1100px;
+            	margin: auto;
+            }
+            #top2box_1{
+                width: 250px;
+                height: 450px;
+                position: absolute;
+                z-index:999;            
+                padding-top: 30px;
+                background-color: white;
+                display: none;
+                border: 1px solid orangered;
+                left: 60px;
+            }
+            #top2box_1 ul li{
+            	width: 225px;
+            	height: 40px;
+                padding-left: 25px;
+            	list-style-type: none;
+            	line-height: 40px;
+            }
+            #top2box_1 ul li span{
+            	height: 40px;
+            	float: right;
+            	color: gray;
+            	display: inline;
+            }
+            #top2box_1 div{
+            	display: none;
+            	width: 900px;
+            	height: 480px;
+            	background-color: white;
+            	position: absolute;
+            	z-index: 999;
+            	margin-left: 226px;
+            	margin-top: -70px;
+                border: 1px solid #DCDCDC;
+            }
+            .lis{
+            	background-color: orangered;
+            }
+            #top2box_1 div ul li{
+            	margin-top: 30px;
+            	float: left;
+            }
+            #top2box_1 div span{
+            	position: absolute;
+            }
+            #content2_1{
+            	width:1320px;
+            	height: 1100px;
+            	margin: auto;
+            }
+            #content2top{
+            	width: 1320px;
+            	height: 40px;
+            }
+            #content2topa{
+            	width: 200px;
+            	height: 40px;
+            	color: gray;
+            	font-size: 15px;
+            	line-height: 40px;
+            }
+            #content2topa a{
+            	color: gray;
+            	font-size: 15px;
+            	margin-right: 6px;
+            }
+            #content2_left{
+            	width: 240px;
+            	height: 1000px;
+            	background-color:white;
+            	float: left;
+            }
+             #content2_left ul li{
+             	width: 200px;
+             	height: 36px;
+             	list-style-type: none;
+             	color: gray;
+             	margin-left: 40px;
+             }
+             #content2_left a{
+             	color: gray;
+             }
+             #content2_left ul li a:hover{
+             	color: black;
+             }
+             #content2_right{
+            	width: 1060px;
+            	height: 640px;
+            	background-color:white;
+            	float: left;
+            	margin-left: 20px;
+            }
+            #content2_right1{
+            	width: 980px;
+            	height: 300px;
+            	margin: auto;
+            	border-bottom: 2px solid #C0C0C0;
+            }
+            #content2_right1_left{
+            	width: 490px;
+            	height: 280px;
+            	float: left;
+            }
+            #content2_right1_right{
+            	width: 490px;
+            	height: 280px;
+            	float: left;
+            }
+            #content2_right2{
+            	width: 980px;
+            	height: 300px;
+            	margin: auto;
+            	margin-top: 20px;
+            }
+            .right{
+            	width:480px;
+            	height: 150px;
+            	float: left;
+            }
+            .right img{
+            	margin-top: 30px;
+            }
+            
+        </style>
+        <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+        <script type="text/javascript">
+            //二维码
+            $(function(){
+            	$("#tops>ul>li>ul").hide();
+                $("#tops>ul>li").hover(function(){
+                //$(this).children("ul").css("background-color","#DC143C");
+            		$(this).children("ul").show();
+            	},function(){
+            		$(this).children("ul").hide();
+            	});
+            				
+            	$("#sa").hover(function(){
+            		$(this).css("background-color","white");
+            	},function(){
+            		$(this).css("background-color","#686868");
+            	})
+            })
+            
+            //二级菜单
+            $(function(){
+            	$("#top2centen>ul>li>ul").hide();
+            	$("#top2centen>ul>li").each(function(index){
+            		$(this).hover(function(){
+            			$("#top2box").css("border-bottom","1px solid gainsboro");
+            			
+            			//设置对应板块显示
+            			$("#top2centen>ul>li>ul:eq("+index+")").show();
+            		},function(){
+            			$("#top2box").css("border-bottom"," none");
+            			$("#top2centen>ul>li>ul").hide();
+            		})
+            	})
+            })
+            
+            //输入框
+            $(function(){
+            	$("#top2right ul li ul").hide();
+            	$("#shuru").click(function(){
+            		$(this).css("border-color","orangered");
+            		$("#top2right ul li ul").show();
+            		$("#top2right ul li button").hide();
+            	})
+            	$(document).click(function(e){
+            		var ss=$("#shuru");
+            		//is() 方法用于查看选择的元素是否匹配选择器。是
+            		//has() 选择器选取所有包含一个或多个元素在其内的元素，匹配指定的选择器。(包含关系<p><span></span></p>p元素中有span元素)
+            		if (!ss.is(e.target)&&ss.has(e.target).length==0) {
+            			$("#shuru").css("border-color","gainsboro");
+            			$("#top2right ul li ul").hide();
+            			$("#top2right ul li button").show();
+            		} 
+            	})
+            })
+            
+            //全部商品下拉
+            $(function(){
+                $("#top2centen_1").hover(function(){
+                	$("#top2box_1").show();
+                },function(){
+                    $("#top2box_1:not(:hover)").hide();                	
+                })                
+            	$("#top2box_1>ul>li").hover(function(){
+            		$(this).addClass('lis');
+            		$(this).children("div").show();
+            	},function(){
+            		$(this).removeClass('lis');
+            		$(this).children("div").hide();
+            	})
+                $("#top2box_1").hover(function(){
+                },function(){
+                    $(this).hide();  
+            	})
+            })
+        </script>
+	</head>
+	<body>
+        <div id="big">
+            <div id="topbox">
+            	<div id="tops">
+            		<ul class="topul">
+            			<li><a href="#">小米商城</a></li>
+            			<li><a href="#">MIUI</a></li>
+            			<li><a href="#">loT</a></li>
+            			<li><a href="#">云服务</a></li>
+            			<li><a href="#">金融</a></li>
+            			<li><a href="#">有品</a></li>
+            			<li style="width: 80px;"><a href="#">小爱开放平台</a></li>
+            			<li><a href="#">企业团购</a></li>
+            			<li><a href="#">资质证照</a></li>
+            			<li><a href="#">协议规则</a></li>
+            			<li><a href="#">下载app</a>
+            				<ul class="song">
+            					<li style=" border-right:none ;"><img src="img/download.png" style="width: 100px; height: 100px;"/></li>
+            				</ul>
+            			</li>
+            		</ul>
+            		<ul id="topright">
+            			<li style="width: 50px;" ><a href="log.html" class="logs">登录</a></li>
+            			<li><a href="" style="width: 80px;">消息通知</a></li>
+                        <li style="width: 80px;"><a href="zhuce.html">我的订单</a></li>
+            			<li><a href="shopping.html" id="sa" style=" display: block; float: left; width: 100px; height:40px;background-color:#686868;color:#B0B0B0;"><img src="tubiaoimg/购物车.png"/>购物车</a></li>
+            		</ul>
+            	</div>
+            					
+            </div>
+            <div id="top2box">
+            	<div id="top2left">
+            		<div id="top2left_img">
+            			<img src="img/QQ图片20190928154419.png" id="imgers"/>
+            			<img src="https://account.xiaomi.com/static/res/28f08d0/account-static/respassport/acc-2014/img/milogo.png" id="imgers2"/>
+            		</div>					
+            	</div>
+            	<div id="top2centen">
+            		<div id="top2centen_1">
+                    	全部商品分类                   
+                    </div>
+            		<ul>
+            			<li>小米手机
+            				<ul>
+            					<li><a href="#"><img src="img/QQ图片20190921110105.png"><br/><span style="color:gray;">小米CC</span><br/><span style="color: orange;">1799元起</span></a></li>
+            					<li><a href="#"><img src="img/QQ图片20190921110111.png"><br/><span style="color:gray;">小米CC9e</span><br/><span style="color: orange;">1299元起</span></a></li>
+            					<li><a href="#"><img src="img/QQ图片20190921110022.png"><br/><span style="color:gray;">小米9</span><br/><span style="color: orange;">2799元起</span></a></li>
+            					<li><a href="#"><img src="img/QQ图片20190921110120.png"><br/><span style="color:gray;">小米CC美图定制版</span><br/><span style="color: orange;">2599元起</span></a></li>
+            					<li><a href="#"><img src="img/QQ图片20190921110344.png"><br/><span style="color:gray;">小米MIX3</span><br/><span style="color: orange;">2599元起</span></a></li>
+            					<li><a href="#"><img src="img/QQ图片20190921110349.png"><br/><span style="color:gray;">小米MIX 2S</span><br/><span style="color: orange;">1799元起</span></a></li>
+            				</ul>
+            			</li>
+            			<li>Redmi红米
+            				<ul style="margin-left: -320px;">
+            					<li><a href="#"><img src="img/QQ图片20190921110344.png"><br/><span style="color:gray;">Redmi k20 Pro尊享版</span><br/><span style="color: orange;">2699元起</span></a></li>
+            					<li><a href="#"><img src="img/QQ图片20190921110349.png"><br/><span style="color:gray;">Redmi Note 8 Pro</span><br/><span style="color: orange;">1399元起</span></a></li>
+            					<li><a href="#"><img src="img/QQ图片20190921110357.png"><br/><span style="color:gray;">Redmi Note 8</span><br/><span style="color: orange;">999元起</span></a></li>
+            					<li><a href="#"><img src="img/QQ图片20190921110407.png"><br/><span style="color:gray;">Redmi k20 Pro</span><br/><span style="color: orange;">2299元起</span></a></li>
+            					<li><a href="#"><img src="img/QQ图片20190921110111.png"><br/><span style="color:gray;">Redmi k20</span><br/><span style="color: orange;">1799元起</span></a></li>
+            					<li><a href="#"><img src="img/QQ图片20190921110022.png"><br/><span style="color:gray;">Redmi Note 7</span><br/><span style="color: orange;">1399元起</span></a></li>
+            				</ul>
+            			</li>
+            			<li style="width: 60px;">电视
+            				<ul style="margin-left: -410px;">
+            					<li><a href="#"><img src="img/QQ图片20190921110301.png"><br/><span style="color:gray;">Redmi红米电视 70英寸 </span><br/><span style="color: orange;">3799元起</span></a></li>
+            					<li><a href="#"><img src="img/QQ图片20190921110440.png"><br/><span style="color:gray;">小米壁画电视 65英寸</span><br/><span style="color: orange;">6999元起</span></a></li>
+            					<li><a href="#"><img src="img/QQ图片20190921154031.png"><br/><span style="color:gray;">小米全面屏电视 E55A</span><br/><span style="color: orange;">1799元起</span></a></li>
+            					<li><a href="#"><img src="img/QQ图片20190921154240.png"><br/><span style="color:gray;">小米电视4A 32英寸</span><br/><span style="color: orange;">699元起</span></a></li>
+            					<li><a href="#"><img src="img/QQ图片20190921154226.png"><br/><span style="color:gray;">小米电视4A 55英寸</span><br/><span style="color: orange;">1699元起</span></a></li>
+            					<li><a href="#"><img src="img/QQ图片20190921154308.png"><br/><span style="color:gray;">小米电视4A 65英寸</span><br/><span style="color: orange;">2699元起</span></a></li>
+            				</ul>
+            			</li>
+            			<li>笔记本
+            				<ul style="margin-left: -470px;">
+            					<li><a href="#"><img src="img/dn3.png"><br/><span style="color:gray;">小米CC</span><br/><span style="color: orange;">1799元起</span></a></li>
+            					<li><a href="#"><img src="img/dn4.png"><br/><span style="color:gray;">小米CC9e</span><br/><span style="color: orange;">1299元起</span></a></li>
+            					<li><a href="#"><img src="img/dn5.png"><br/><span style="color:gray;">小米9</span><br/><span style="color: orange;">2799元起</span></a></li>
+            					<li><a href="#"><img src="img/dn6.png"><br/><span style="color:gray;">小米CC美图定制版</span><br/><span style="color: orange;">2599元起</span></a></li>
+            					<li><a href="#"><img src="img/dn3.png"><br/><span style="color:gray;">小米MIX3</span><br/><span style="color: orange;">2599元起</span></a></li>
+            					<li><a href="#"><img src="img/dn4.png"><br/><span style="color:gray;">小米MIX 2S</span><br/><span style="color: orange;">1799元起</span></a></li>
+            				</ul>
+            			</li>
+            			<li style="width: 60px;">家电
+            				<ul style="margin-left: -560px;">
+            					<li><a href="#"><img src="img/QQ图片20190921110344.png"><br/><span style="color:gray;">小米CC</span><br/><span style="color: orange;">1799元起</span></a></li>
+            					<li><a href="#"><img src="img/QQ图片20190921110349.png"><br/><span style="color:gray;">小米CC9e</span><br/><span style="color: orange;">1299元起</span></a></li>
+            					<li><a href="#"><img src="img/QQ图片20190921110357.png"><br/><span style="color:gray;">小米9</span><br/><span style="color: orange;">2799元起</span></a></li>
+            					<li><a href="#"><img src="img/QQ图片20190921110407.png"><br/><span style="color:gray;">小米CC美图定制版</span><br/><span style="color: orange;">2599元起</span></a></li>
+            					<li><a href="#"><img src="img/QQ图片20190921110111.png"><br/><span style="color:gray;">小米MIX3</span><br/><span style="color: orange;">2599元起</span></a></li>
+            					<li><a href="#"><img src="img/QQ图片20190921110022.png"><br/><span style="color:gray;">小米MIX 2S</span><br/><span style="color: orange;">1799元起</span></a></li>
+            				</ul>
+            			</li>
+            			<li>路由器
+            				<ul style="margin-left: -620px;">
+            					<li><a href="#"><img src="img/lyq2.jpg"><br/><span style="color:gray;">小米CC</span><br/><span style="color: orange;">1799元起</span></a></li>
+            					<li><a href="#"><img src="img/lyq3.jpg"><br/><span style="color:gray;">小米CC9e</span><br/><span style="color: orange;">1299元起</span></a></li>
+            					<li><a href="#"><img src="img/lyq4.jpg"><br/><span style="color:gray;">小米9</span><br/><span style="color: orange;">2799元起</span></a></li>
+            					<li><a href="#"><img src="img/lyq5.jpg"><br/><span style="color:gray;">小米CC美图定制版</span><br/><span style="color: orange;">2599元起</span></a></li>
+            					<li><a href="#"><img src="img/lyq2.jpg"><br/><span style="color:gray;">小米MIX3</span><br/><span style="color: orange;">2599元起</span></a></li>
+            					<li><a href="#"><img src="img/lyq3.jpg"><br/><span style="color:gray;">小米MIX 2S</span><br/><span style="color: orange;">1799元起</span></a></li>
+            				</ul>
+            			</li>
+            			<li>智能硬件
+            				<ul style="margin-left: -710px;">
+            					<li><a href="#"><img src="img/QQ图片20190921110344.png"><br/><span style="color:gray;">小米CC</span><br/><span style="color: orange;">1799元起</span></a></li>
+            					<li><a href="#"><img src="img/QQ图片20190921110349.png"><br/><span style="color:gray;">小米CC9e</span><br/><span style="color: orange;">1299元起</span></a></li>
+            					<li><a href="#"><img src="img/QQ图片20190921110357.png"><br/><span style="color:gray;">小米9</span><br/><span style="color: orange;">2799元起</span></a></li>
+            					<li><a href="#"><img src="img/QQ图片20190921110407.png"><br/><span style="color:gray;">小米CC美图定制版</span><br/><span style="color: orange;">2599元起</span></a></li>
+            					<li><a href="#"><img src="img/QQ图片20190921110111.png"><br/><span style="color:gray;">小米MIX3</span><br/><span style="color: orange;">2599元起</span></a></li>
+            					<li><a href="#"><img src="img/QQ图片20190921110022.png"><br/><span style="color:gray;">小米MIX 2S</span><br/><span style="color: orange;">1799元起</span></a></li>
+            				</ul>
+            			</li>
+            			<li style="width: 60px;">服务</li>
+            			<li style="width: 60px;">社区</li>
+            		</ul>
+            	</div>
+            	<div id="top2right">
+            		<div id="top2ul">
+            			<ul>
+            				<li>
+            					<input type="text" id="shuru"/>
+            					<button id="btt1">小米9 Pro 5G</button>
+            					<button id="btt2">Redmi Note 8</button>
+            					<ul id="ulliul">
+            						<li><a href="#">小米9</a></li>
+            						<li><a href="#">Redmi 20</a></li>
+            						<li><a href="#">小米9</a></li>
+            						<li><a href="#">小米9</a></li>
+            						<li><a href="#">小米9</a></li>
+            						<li><a href="#">小米9</a></li>
+            						<li><a href="#">小米9</a></li>
+            						<li><a href="#">小米9</a></li>
+            						<li><a href="#">小米9</a></li>
+            						<li><a href="#">小米9</a></li>
+            					</ul>
+            				</li>
+            			</ul>
+            		</div>					
+            		<div id="top2rightimg">
+            			<img src="tubiaoimg/搜索 (1).png"/>
+            		</div>
+            	</div>
+            </div>
+            <div id="content">
+            	<div id="content2">
+            		<div id="top2box_1">
+                    <ul>
+                        <li>手机  电话卡<span><img src="tubiaoimg/public-right arrow (1).png"/></span>
+                        	<div id="conboxoneleft_right1">
+                        		<ul>
+                        			<li><img src="leftimages/1cce3d767b8841c237cd610833799fe3.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/20e23b306f50384ab85b6658f5c963ff.png"/><span>小米9</span></li>
+                        			<li><img src="leftimages/265c87b03067bc11097db369e71bf976.png"/><span>黑鲨游戏手机2</span></li>
+                        			<li><img src="leftimages/2b0d7d2c85734b80a1b8d1a4100c9c1f.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/26d1de72e958da75048be5c6cc0b73f6.jpg"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/3d3ee15816d2ccbe922172033c3c3941.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/2b0d7d2c85734b80a1b8d1a4100c9c1f.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/1a2ed8c7ac2ab7ebfd1554a7a1ac25a6.jpg"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/9e83fabc3efeb8dd9f880ce26220c294.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/7ab17259cd65adb7222e856fa1996a34.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/5c483e65040470208823a8bfb5d73c27.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/8ade0163e9fdbd92a4b7d7ee3aeab905.jpg"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/84e19ece0125992449a6276e2ba333e9.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/85d746207b997873ddfcdca0da025f78.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/fbb0bc35bd92d1fa8840762810a5cc84.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/eea579b45e6d01f214423c19ef76a459.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/b4534b9fd22f478314f3cbbf286b7338.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/ff29135707919a3b1bcbc286fe1a118b.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        		</ul>
+                        	</div>
+                        </li>
+                        <li>电视  盒子<span><img src="tubiaoimg/public-right arrow (1).png"/></span>
+                        	<div id="conboxoneleft_right2" style="margin-top:-112px; width: 700px;">
+                        		<ul>
+                        			<li><img src="leftimages/2b0d7d2c85734b80a1b8d1a4100c9c1f.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/26d1de72e958da75048be5c6cc0b73f6.jpg"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/3d3ee15816d2ccbe922172033c3c3941.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/2b0d7d2c85734b80a1b8d1a4100c9c1f.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/1a2ed8c7ac2ab7ebfd1554a7a1ac25a6.jpg"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/9e83fabc3efeb8dd9f880ce26220c294.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/7ab17259cd65adb7222e856fa1996a34.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/5c483e65040470208823a8bfb5d73c27.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/8ade0163e9fdbd92a4b7d7ee3aeab905.jpg"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/84e19ece0125992449a6276e2ba333e9.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        		</ul>
+                        	</div>
+                        </li>
+                        <li>笔记本  平板<span><img src="tubiaoimg/public-right arrow (1).png"/></span>
+                        	<div id="conboxoneleft_right3" style="margin-top:-152px; width: 700px;">
+                        		<ul>
+                        			<li><img src="leftimages/2b0d7d2c85734b80a1b8d1a4100c9c1f.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/26d1de72e958da75048be5c6cc0b73f6.jpg"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/3d3ee15816d2ccbe922172033c3c3941.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/2b0d7d2c85734b80a1b8d1a4100c9c1f.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/1a2ed8c7ac2ab7ebfd1554a7a1ac25a6.jpg"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/9e83fabc3efeb8dd9f880ce26220c294.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/7ab17259cd65adb7222e856fa1996a34.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/5c483e65040470208823a8bfb5d73c27.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/8ade0163e9fdbd92a4b7d7ee3aeab905.jpg"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/84e19ece0125992449a6276e2ba333e9.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        		</ul>
+                        	</div>
+                        </li>
+                        <li>家电  插线板<span><img src="tubiaoimg/public-right arrow (1).png"/></span>
+                        	<div id="conboxoneleft_right4" style="margin-top:-192px; width: 700px;">
+                        		<ul>
+                        			<li><img src="leftimages/2b0d7d2c85734b80a1b8d1a4100c9c1f.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/26d1de72e958da75048be5c6cc0b73f6.jpg"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/3d3ee15816d2ccbe922172033c3c3941.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/2b0d7d2c85734b80a1b8d1a4100c9c1f.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/1a2ed8c7ac2ab7ebfd1554a7a1ac25a6.jpg"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/9e83fabc3efeb8dd9f880ce26220c294.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/7ab17259cd65adb7222e856fa1996a34.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/5c483e65040470208823a8bfb5d73c27.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/8ade0163e9fdbd92a4b7d7ee3aeab905.jpg"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/84e19ece0125992449a6276e2ba333e9.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        		</ul>
+                        	</div>
+                        </li>
+                        <li>出行  穿戴<span><img src="tubiaoimg/public-right arrow (1).png"/></span>
+                        	<div id="conboxoneleft_right5" style="margin-top:-232px; width: 700px;">
+                        		<ul>
+                        			<li><img src="leftimages/2b0d7d2c85734b80a1b8d1a4100c9c1f.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/26d1de72e958da75048be5c6cc0b73f6.jpg"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/3d3ee15816d2ccbe922172033c3c3941.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/2b0d7d2c85734b80a1b8d1a4100c9c1f.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/1a2ed8c7ac2ab7ebfd1554a7a1ac25a6.jpg"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/9e83fabc3efeb8dd9f880ce26220c294.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/7ab17259cd65adb7222e856fa1996a34.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/5c483e65040470208823a8bfb5d73c27.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/8ade0163e9fdbd92a4b7d7ee3aeab905.jpg"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/84e19ece0125992449a6276e2ba333e9.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        		</ul>
+                        	</div>
+                        </li>
+                        <li>智能  路由器<span><img src="tubiaoimg/public-right arrow (1).png"/></span>
+                        	<div id="conboxoneleft_right6" style="margin-top:-272px; width: 700px;">
+                        		<ul>
+                        			<li><img src="leftimages/2b0d7d2c85734b80a1b8d1a4100c9c1f.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/26d1de72e958da75048be5c6cc0b73f6.jpg"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/3d3ee15816d2ccbe922172033c3c3941.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/2b0d7d2c85734b80a1b8d1a4100c9c1f.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/1a2ed8c7ac2ab7ebfd1554a7a1ac25a6.jpg"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/9e83fabc3efeb8dd9f880ce26220c294.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/7ab17259cd65adb7222e856fa1996a34.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/5c483e65040470208823a8bfb5d73c27.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/8ade0163e9fdbd92a4b7d7ee3aeab905.jpg"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/84e19ece0125992449a6276e2ba333e9.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        		</ul>
+                        	</div>
+                        </li>
+                        <li>电源  配件<span><img src="tubiaoimg/public-right arrow (1).png"/></span>
+                        	<div id="conboxoneleft_right7" style="margin-top:-312px; width: 700px;">
+                        		<ul>
+                        			<li><img src="leftimages/2b0d7d2c85734b80a1b8d1a4100c9c1f.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/26d1de72e958da75048be5c6cc0b73f6.jpg"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/3d3ee15816d2ccbe922172033c3c3941.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/2b0d7d2c85734b80a1b8d1a4100c9c1f.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/1a2ed8c7ac2ab7ebfd1554a7a1ac25a6.jpg"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/9e83fabc3efeb8dd9f880ce26220c294.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/7ab17259cd65adb7222e856fa1996a34.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/5c483e65040470208823a8bfb5d73c27.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/8ade0163e9fdbd92a4b7d7ee3aeab905.jpg"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/84e19ece0125992449a6276e2ba333e9.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        		</ul>
+                        	</div>
+                        </li>
+                        <li>健康  儿童<span><img src="tubiaoimg/public-right arrow (1).png"/></span>
+                        	<div id="conboxoneleft_right8" style="margin-top:-352px; width: 700px;">
+                        		<ul>
+                        			<li><img src="leftimages/2b0d7d2c85734b80a1b8d1a4100c9c1f.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/26d1de72e958da75048be5c6cc0b73f6.jpg"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/3d3ee15816d2ccbe922172033c3c3941.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/2b0d7d2c85734b80a1b8d1a4100c9c1f.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/1a2ed8c7ac2ab7ebfd1554a7a1ac25a6.jpg"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/9e83fabc3efeb8dd9f880ce26220c294.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/7ab17259cd65adb7222e856fa1996a34.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/5c483e65040470208823a8bfb5d73c27.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/8ade0163e9fdbd92a4b7d7ee3aeab905.jpg"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/84e19ece0125992449a6276e2ba333e9.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        		</ul>
+                        	</div>
+                        </li>
+                        <li>耳机  音箱<span><img src="tubiaoimg/public-right arrow (1).png"/></span>
+                        	<div id="conboxoneleft_right9" style="margin-top:-392px; width: 700px;">
+                        		<ul>
+                        			<li><img src="leftimages/2b0d7d2c85734b80a1b8d1a4100c9c1f.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/26d1de72e958da75048be5c6cc0b73f6.jpg"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/3d3ee15816d2ccbe922172033c3c3941.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/2b0d7d2c85734b80a1b8d1a4100c9c1f.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/1a2ed8c7ac2ab7ebfd1554a7a1ac25a6.jpg"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/9e83fabc3efeb8dd9f880ce26220c294.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/7ab17259cd65adb7222e856fa1996a34.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/5c483e65040470208823a8bfb5d73c27.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/8ade0163e9fdbd92a4b7d7ee3aeab905.jpg"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/84e19ece0125992449a6276e2ba333e9.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        		</ul>
+                        	</div>
+                        </li>
+                        <li>生活  箱包<span><img src="tubiaoimg/public-right arrow (1).png"/></span>
+                        	<div id="conboxoneleft_right10" style="margin-top:-432px; width: 700px;">
+                        		<ul>
+                        			<li><img src="leftimages/2b0d7d2c85734b80a1b8d1a4100c9c1f.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/26d1de72e958da75048be5c6cc0b73f6.jpg"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/3d3ee15816d2ccbe922172033c3c3941.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/2b0d7d2c85734b80a1b8d1a4100c9c1f.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/1a2ed8c7ac2ab7ebfd1554a7a1ac25a6.jpg"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/9e83fabc3efeb8dd9f880ce26220c294.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/7ab17259cd65adb7222e856fa1996a34.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/5c483e65040470208823a8bfb5d73c27.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/8ade0163e9fdbd92a4b7d7ee3aeab905.jpg"/><span>Redmi k20 Pro尊享版</span></li>
+                        			<li><img src="leftimages/84e19ece0125992449a6276e2ba333e9.png"/><span>Redmi k20 Pro尊享版</span></li>
+                        		</ul>
+                        	</div>
+                        </li>
+                    </ul>
+               </div>           
+            		<div id="content2_1">
+            		<div id="content2top">
+            			<div id="content2topa">
+            				<a href="index.html" >首页</a>>个人中心
+            			</div>               		
+                	</div>
+            		<div id="content2_left">
+            			<ul>
+            				<li style="color: black; font-size: 20px;margin-bottom: 10px;margin-top: 30px;">订单中心</li>
+            				<li><a href="#">我的订单</a></li>
+            				<li><a href="#">团购订单</a></li>
+            				<li><a href="#">评价晒单</a></li>
+            				<li><a href="#">话费充值订单</a></li>
+            				<li><a href="#">以旧换新订单</a></li>
+            			</ul>
+            			<ul style="margin-top: 20px;">
+            				<li style="color: black; font-size: 20px;margin-bottom: 10px;">个人中心</li>
+            				<li><a href="#" style="color: orangered;">我的个人中心</a></li>
+            				<li><a href="#">消息通知</a></li>
+            				<li><a href="#">购买资格</a></li>
+            				<li><a href="#">现金账户</a></li>
+            				<li><a href="#">小米礼品卡</a></li>
+            				<li><a href="#">现金券</a></li>
+            				<li><a href="#">喜欢的商品</a></li>
+            				<li><a href="#">优惠券</a></li>
+            				<li><a href="#">收货地址</a></li>
+            				<li><a href="#">红包</a></li>
+            			</ul>
+            			<ul>
+            				<li style="color: black; font-size: 20px;margin-bottom: 10px; margin-top: 20px;">售后服务</li>
+            				<li><a href="#">服务记录</a></li>
+            				<li><a href="#">申请服务</a></li>
+            				<li><a href="#">领取快递报销</a></li>
+            			</ul>
+            			<ul>
+            				<li style="color: black; font-size: 20px;margin-bottom: 10px;margin-top: 20px;">账户管理</li>
+            				<li><a href="#">个人信息</a></li>
+            				<li><a href="#">修改信息</a></li>
+            			</ul>
+            		</div>
+            		<div id="content2_right">
+            			<div id="content2_right1">
+            				<div id="content2_right1_left">
+            					<div style="width: 200px;height: 280px; float: left;">
+            						<img src="tubiaoimg/photo.jpg" style="border: 1px solid gainsboro; border-radius:50%;width: 160px; height: 160px;padding: 5px;margin-top:70px;"/>
+            					</div>
+            					<div style="width: 200px;height: 210px; float: left; margin-top: 110px;">
+            						<span style="font-size: 25px;color: gray;">用户名</span><br/>
+            						<span style="font-size: 15px;color: gray;">早上好~</span><br/>
+            						<a href="xiugai.html" style="color: orangered;font-size: 14px;display: block;width: 200px;margin-top: 15px;">修改个人信息></a><br/>
+            					</div>
+            				</div>
+            				<div id="content2_right1_right">
+            					<div style="width: 200px;height: 210px; float: left; margin-top: 110px;margin-left: 20px;">
+            						<span style="font-size: 15px;color: gray;display: block;width: 200px;">账户安全：<span style="color: orange;">普通</span></span><br/>
+            						<span style="font-size: 15px;color: gray;display: block;">绑定手机：13*****4243</span><br/>
+            						<span style="font-size: 15px;color: gray;display: block;">绑定邮箱：未绑定></span><br/>
+            					</div>
+            				</div>
+            			</div>
+            			<div id="content2_right2">
+            				<div class="right">
+            					<div style="float: left; width: 130px;">
+            						<img src="tubiaoimg/portal-icon-1.png" />
+            					</div>
+            					<div style="float: left;margin-top: 60px;">
+            						<span style="font-size: 20px;color: gray;">待支付的订单: <span style="color: orangered;">0</span></span><br/>
+            						<span  style="font-size: 14px;"><a href="#" style="color: gray;">查看待支付订单    ></a></span>
+            					</div>
+            				</div>
+            				<div class="right">
+            					<div style="float: left; width: 130px;">
+            						<img src="tubiaoimg/portal-icon-2.png" />
+            					</div>
+            					<div style="float: left;margin-top: 60px;">
+            						<span style="font-size: 20px;color: gray;">待收货的订单: <span style="color: orangered;">0</span></span><br/>
+            						<span style="font-size: 14px;"><a href="#" style="color: gray;">查看待收货订单    ></a></span>
+            					</div>
+            				</div>
+            				<div class="right">
+            					<div style="float: left; width: 130px;">
+            						<img src="tubiaoimg/portal-icon-3.png" />
+            					</div>
+            					<div style="float: left;margin-top: 60px;">
+            						<span style="font-size: 20px;color: gray;">待评价商品数: <span style="color: orangered;">0</span></span><br/>
+            						<span style="font-size: 14px;"><a href="#" style="color: gray;">查看待评价商品数   ></a></span>
+            					</div>
+            				</div>
+            				<div class="right">
+            					<div style="float: left; width: 130px;">
+            						<img src="tubiaoimg/portal-icon-4.png" />
+            					</div>
+            					<div style="float: left;margin-top: 60px;">
+            						<span style="font-size: 20px;color: gray;">喜欢的商品: <span style="color: orangered;">0</span></span><br/>
+            						<span style="font-size: 14px;"><a href="#" style="color: gray;">查看喜欢的商品    ></a></span>
+            					</div>
+            				</div>
+            			</div>
+            		</div>
+            	</div>
+            	</div>           
+            </div>
+            <div style="width: 100%; height: 670px;"><iframe style="width:100%; height: 100%;" src="bottom.html" frameborder="0"></iframe></div>				       
+        </div>
+	</body>
+</html>

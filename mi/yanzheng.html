@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+				
+			}
+			#divbig{
+				width: 410px;
+				height: 440px;
+				margin: auto;
+			}
+			#divfrist{
+				width: 396px;
+				height: 50px;
+				text-align: center;
+			}
+			.img1{
+				width: 50px;
+				height: 50px;
+			}
+			#divtwo{
+				width: 396px;
+				height: 50px;
+			}
+			#divthree{
+				width: 396px;
+				height: 50px;
+				text-align: center;
+			}
+			.mi2{
+				 width: 300px;
+				 height:50px;
+				 font-size:30px;
+			}
+			#divfour{
+				width: 405px;
+				height: 70px;
+				margin-top: 20px;
+			}
+			#divfive{
+				width: 396px;
+				height: 190px;
+			}
+			.ma{
+				width: 290px;
+				height: 40px;
+			}
+			#bt1{
+				width:90px;
+				height: 40px;
+				background-color: white;
+				border: 1px solid gainsboro;
+				cursor: pointer;
+			}
+			#czx{
+				width: 200px;
+				height: 15px;
+				font-size: 17px;
+				color: red;
+				display: none;
+			}
+			.next{
+				width: 390px;
+				height: 40px;
+				background-color: darkorange;
+				border: none;
+				color: white;
+				margin-top: 30px;
+				margin-left: 2px;
+				font-size: 20px;
+				
+			}
+			.back{
+				width: 390px;
+				height: 40px;
+				color: grey;
+				margin-top: 10px;
+				margin-left: 2px;
+				background-color: white;
+				font-size: 20px;
+				border: 1px solid gainsboro;
+			}
+		</style>
+		<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+		<script type="text/javascript">	
+			//获取电话号码
+			$(function(){
+         		  getData1();
+       		});
+			function getData1(){
+				var tel=localStorage.getItem("pone").split(',');
+				var str=tel[0];//+tel[1];
+//				console.log(str);
+				$("#names").append(str);//追加
+//				document.getElementById("#names").innerText=tel;
+//           		 var name = $.query.get("num");
+// 				 var name2 = $.query.get("num2");
+//				 $("#names").text("+"+name2+name);
+//				 alert(name);
+   	        }
+			
+			var number1=false;	
+			//验证码
+			function yan(){
+				var num=document.getElementById("yanma").value;
+				if(num==""){
+					document.getElementById("czx2").innerText="请输入验证码";
+					document.getElementById("czx2").style.color="red";
+					number1=false;
+				}else{
+					document.getElementById("czx2").innerText="ok!!";
+					document.getElementById("czx2").style.color="green";
+					number1=true;
+				
+				}
+			}
+			//倒计时
+			var i=0;
+			function  startdo(){
+				i++;
+				var time=i*60;//倒计时秒数
+				document.getElementById("bt1").disabled=true;//禁用			
+				var timer=setInterval(function(){				
+					time--;
+					document.getElementById("div1").innerHTML=time;
+					if(time==0){
+						//点击3次提示剩余次数
+						if(i>=3&&i<=5){
+							document.getElementById("czx").style.display="block";
+							document.getElementById("czx").innerHTML="你还可以发送"+(5-i)+"条信息";
+						}
+						//点击5次就不可以发送验证码
+						if(i==5){
+							document.getElementById("bt1").disabled=true;
+						}else{
+							document.getElementById("bt1").disabled=false;
+						}
+						document.getElementById("div1").innerHTML="";//清空数字												
+						//停止定时器
+						clearInterval(timer);
+					}
+				},1000)
+			
+			}
+			function bg(){
+				document.getElementById("bt1").style.backgroundColor="darkorange"
+			}
+			function bg2(){	
+				document.getElementById("bt1").style.backgroundColor="white"
+			}
+            
+            //提交注册
+            function check(){
+            	if(number1==true){
+            		return true;		
+            	}else{
+            		document.getElementById("czx2").innerText="请输入验证码";
+            		document.getElementById("czx2").style.color="red";
+            		return false;
+            		
+            	}
+            	
+            }
+		</script>
+	</head>
+	<body>
+		<div id="divbig">
+			<div id="divfrist">
+				<img src="https://account.xiaomi.com/static/res/28f08d0/account-static/respassport/acc-2014/img/milogo.png" class="img1"/>
+			</div>
+			<div id="divtwo"></div>
+			<div id="divthree">
+				<span class="mi2">注册小米账号</span>
+			</div>
+			<div id="divfour">
+				<span style="font-size: 19px; color: grey;">我们已发送一条验证短信至<span style="color: darkorange; font-size:19px;" id="names"></span><br/>请输入短信中的验证码</span>
+			</div>
+			<div id="divfive">
+				<form action="zhucemima.html" onsubmit="return check()">
+					<input type="text" name="yzm" class="ma" placeholder="验证码" onblur="yan()" id="yanma"/>
+					<button id="bt1" onclick="startdo()" onmousemove="bg()" onmouseout="bg2()">发送<span id="div1"></span></button>
+					<div id="czx"></div>
+					<div id="czx2" style="margin-top: 10px;"></div>
+					<input type="submit" value="下一步" class="next" id="next"/>
+				</form>
+				<form action="zhuce.html" method="get">
+					<input type="submit" value="返回" class="back"/>
+				</form>
+				
+			</div>
+		</div>
+		
+	</body>
+</html>

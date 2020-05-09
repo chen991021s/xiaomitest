@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#bigbox {
+				width: 100%;
+				height: 100%;
+				background-color: #EEEEEE;
+			}
+			#content{
+				width: 1100px;
+				height: 800px;
+				margin: auto;
+				padding-top: 40px;
+			}
+			#top{
+				width: 1100px;
+				height: 100px;
+			}
+			#topleft{
+				width: 300px;
+				height: 100px;
+				line-height: 120px;
+				float: left;
+			}
+			#topright{
+				width: 34px;
+				height: 100px;
+				line-height: 100px;
+				float: right;
+			}
+			#topright a{
+				font-size: 13px;
+				color: #C0C0C0;
+			}
+			#topright a:hover{
+				color: orangered;
+			}
+			a:link{
+				text-decoration: none;
+			}
+			#checks{
+				width: 1100px;
+				height: 600px;
+				/*border: 1px solid violet;*/
+			}
+			#ck1{
+				width: 1100px;
+				height: 80px;
+			}
+			.on{
+				color: orange;
+			}
+			#ck1 ul li{
+				width: 173px;
+				height: 40px;
+				float: left;
+				text-align: center;
+				font-size: 15px;
+				list-style-type: none;
+				margin-top: 40px;
+			}
+			#ck1_1{
+				width: 220px;
+				height: 80px;
+				float: left;
+			}
+			#ck1 ul li:hover{
+				color: orange;
+				cursor: pointer;
+			}
+			#ck2{
+				width: 1100px;
+				height: 480px;
+			}
+			#ck2_1{
+				width: 1099px;
+				height: 480px;
+				border: 1px solid gainsboro;
+				border-radius:10px;
+				background-color: white;							
+			}
+			.c:hover{
+				background-color: gainsboro;
+				cursor: pointer;
+			}
+			#ck2_1_1{
+				width: 1040px;
+				height: 70px;
+				margin: auto;
+				border-bottom: 2px solid #DCDCDC;
+			}
+			#ck2_1_2,#ck2_1_3,#ck2_1_4{
+				width: 1040px;
+				height: 100px;
+				margin: auto;
+				border-bottom: 2px solid #DCDCDC;
+			}
+			#ck2_1_5{
+				width: 1040px;
+				height: 100px;
+				margin: auto;
+			}
+			#ck2_2{
+				width: 1099px;
+				height: 480px;
+				border: 1px solid gainsboro;
+				border-radius:10px;
+				background-color: white;							
+			}
+			#ck2_2_left{
+				width: 370px;
+				height: 480px;
+				float: left;
+				text-align: center;
+			}
+			#ck2_2_left img{
+				border-radius: 50%;
+				margin-top: 130px;
+				width: 100px; 
+				height: 100px; 
+				padding:3px; 
+				border: 2px solid gainsboro;
+			}
+			#ck2_2_right{
+				width: 720px;
+				height: 480px;
+				float: left;
+			}
+			#ck2_2_right1{
+				width: 720px;
+				height: 170px;
+				margin-top: 60px;
+			}
+			#ck2_2_right2{
+				width: 720px;
+				height: 190px;
+			}
+			#ck2_3{
+				width: 1099px;
+				height: 480px;
+				border: 1px solid gainsboro;
+				border-radius:10px;
+				background-color: white;							
+			}
+			#ck2_3_1{				
+				width: 1040px;
+				height: 70px;
+				line-height: 80px;
+				margin: auto;
+				border-bottom: 2px solid #DCDCDC;
+			}
+			#ck2_3_2{				
+				width: 1040px;
+				height: 200px;
+				margin: auto;
+			}
+			#weibo,#qq,#weixin{
+				width: 346px;
+				height: 200px;
+				float: left;
+			}
+			#ck2_3_3{				
+				width: 1040px;
+				height: 70px;
+				line-height: 80px;
+				margin: auto;
+				border-bottom: 2px solid #DCDCDC;
+			}
+			#ck2_3_4{				
+				width: 1040px;
+				height: 70px;
+				line-height: 80px;
+				margin: auto;
+				text-align: center;
+			}
+			
+			#ck2_4{
+				width: 1099px;
+				height: 480px;
+				border: 1px solid gainsboro;
+				border-radius:10px;
+				background-color: white;							
+			}
+			#ck2_4_1{			
+				width: 1040px;
+				height: 70px;
+				line-height: 80px;
+				margin: auto;
+				border-bottom: 2px solid #DCDCDC;
+			}
+			#ck2_4_2{			
+				width: 1040px;
+				height: 400px;
+				margin: auto;
+			}
+			#ck2_4_2_1,#ck2_4_2_2,#ck2_4_2_3,#ck2_4_2_4,#ck2_4_2_5,#ck2_4_2_6,#ck2_4_2_7,#ck2_4_2_8,#ck2_4_2_9,#ck2_4_2_10{
+				width: 520px;
+				height: 70px;
+				float: left;
+			}
+			#ck2_5{
+				width: 1099px;
+				height: 400px;
+				border: 1px solid gainsboro;
+				border-radius:10px;
+				background-color: white;							
+			}
+			#ck2_5_1{							
+				width: 1040px;
+				height: 70px;
+				line-height: 80px;
+				margin: auto;
+				border-bottom: 2px solid #DCDCDC;
+			}
+			#ck2_2,#ck2_3,#ck2_4,#ck2_5{
+				display: none;	
+			}
+			
+		</style>
+		<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("#ck1>ul>li").each(function(index){
+					$(this).click(function(){
+						//清除所有li的背景
+						$("#ck1>ul>li").removeClass("on");
+						//给当前点击的li设置背景
+						$(this).addClass("on");
+						//隐藏所有内容
+						$("#ck2>div").hide();
+						//设置对应板块显示
+						$("#ck2>div:eq("+index+")").show();
+					})
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<div id="bigbox">
+			<div id="content">
+				<div id="top">
+					<div id="topleft">
+						<img src="tubiaoimg/n-logo.png"/>
+					</div>
+					<div id="topright">
+						<a href="logxinxi.html">退出</a>
+					</div>
+				</div>
+				<div id="checks">
+					<div id="ck1">
+						<ul>
+							<li class="on">账号安全</li>
+							<li>个人信息</li>
+							<li>绑定授权</li>
+							<li>小米服务</li>
+							<li>设备管理</li>	
+						</ul>
+						<div id="ck1_1">
+							<div style="width: 100px; float: left;margin-top: 30px;">
+								<span style="display: block;width: 100px;height:1px;margin-left:60px;">昵名</span><br/>
+								<span>1234567890</span>
+							</div>
+							<div>
+								<img src="tubiaoimg/portal-icon-4.png" style="width: 100px; height: 100px; position: absolute; border: 2px solid gainsboro;padding:3px; border-radius:50% ;" />
+							</div>
+						</div>
+					</div>
+					<div id="ck2">
+						<div id="ck2_1">
+							<div id="ck2_1_1">
+								<span id="sp1" style="display: block;font-size: 25px;margin-top: 30px;float:left;">安全等级</span>
+								<b id="sp2"style="display: block;font-size:21px; color: red;margin-top: 34px;margin-left:20px;float:left;">40</b>
+								<span id="sp2" style="display: block;font-size: 16px;margin-top: 38px; color: #D5D5D5;float:left;margin-left: 5px;">分</span>
+								<span style="display: block;width:150px; height: 3px;margin-top: 30px;background-color: red;margin-top: 48px;margin-left: 5px; float:left;"></span>
+								<span style="display: block;width: 230px; height: 3px;margin-top: 30px;background-color: gainsboro;margin-top: 48px; float:left;"></span>
+								<span id="sp3" style="display: block;font-size: 16px;margin-top: 30px; color:  #D5D5D5;margin-top: 38px;margin-left:5px;float:left;">存在</span>
+								<span style="display: block;font-size:22px;color: red;margin-top: 33px;float:left;">2</span>
+								<span style="display: block;font-size: 16px; color:  #D5D5D5;margin-top: 30px;margin-top: 38px;float:left;">项风险</span>
+							</div>
+							<div id="ck2_1_2">
+								<div id='ck2_1_2_1' style="width: 50px; height:100px;line-height: 100px;float: left;"> 
+									<img  src="tubiaoimg/锁.png"/>
+								</div>
+								<div id='ck2_1_2_2' style="width: 300px;padding-top: 26px; height:74px; float: left;"> 
+									<span style="font-size: 23px;">账号密码</span><br/>
+									<span style="font-size: 16px;color: #C0C0C0;">用于保护账号信息和登录安全</span>
+								</div>
+								<div id='ck2_1_2_3' style="width:102px; height:100px; float: right;text-align: center;"> 
+									<div class="c" style="border: 1px solid gainsboro; width: 100px; height: 30px;line-height: 30px; text-align: center;margin-top: 34px;color: grey;">修改</div>
+								</div>								
+							</div>
+							<div id="ck2_1_3">
+								<div id='ck2_1_2_1' style="width: 50px; height:100px;line-height: 100px;float: left;"> 
+									<img  src="tubiaoimg/信封.png"/>
+								</div>
+								<div id='ck2_1_2_2' style="width: 700px;padding-top: 26px; height:74px; float: left;"> 
+									<span style="font-size: 23px;">安全邮箱</span ><span style="color: orange;font-size: 14px;margin-left: 8px;"><img  src="tubiaoimg/感叹号.png"/>未绑定</span><br/>
+									<span style="font-size: 16px;color: orange;">安全邮箱将可用于登陆小米账号和重置密码，建议立即设置</span>
+								</div>
+								<div id='ck2_1_2_3' style="width:102px; height:100px; float: right;text-align: center;"> 
+									<div class="c" style="border: 1px solid gainsboro; width: 100px; height: 30px;line-height: 30px; text-align: center;margin-top: 34px;color: grey;">绑定</div>
+								</div>	
+							</div>
+							<div id="ck2_1_4">
+								<div id='ck2_1_2_1' style="width: 50px; height:100px;line-height: 100px;float: left;"> 
+									<img  src="tubiaoimg/手s机.png"/>
+								</div>
+								<div id='ck2_1_2_2' style="width: 700px;padding-top: 26px; height:74px; float: left;"> 
+									<span style="font-size: 23px;">安全手机</span ><span>181******36</span><br/>
+									<span style="font-size: 16px;color: #C0C0C0;">安全手机可用于登录小米账号，重置密码或其他安全验证</span>
+								</div>
+								<div id='ck2_1_2_3' style="width:102px; height:100px; float: right;text-align: center;"> 
+									<div class="c" style="border: 1px solid gainsboro; width: 100px; height: 30px;line-height: 30px; text-align: center;margin-top: 34px;color: grey;">修改</div>
+								</div>
+							</div>
+							<div id="ck2_1_5">
+								<div id='ck2_1_2_1' style="width: 50px; height:100px;line-height: 100px;float: left;"> 
+									<img  src="tubiaoimg/短信.png"/>
+								</div>
+								<div id='ck2_1_2_2' style="width: 700px;padding-top: 26px; height:74px; float: left;"> 
+									<span style="font-size: 23px;">保密问题</span ><span style="color: orange;font-size: 14px;margin-left: 8px;"><img  src="tubiaoimg/感叹号.png"/>未设置</span><br/>
+									<span style="font-size: 16px;color: orange;">保密问题用于安全验证，建议立即设置</span>
+								</div>
+								<div id='ck2_1_2_3' style="width:102px; height:100px; float: right;text-align: center;"> 
+									<div class="c" style="border: 1px solid gainsboro; width: 100px; height: 30px;line-height: 30px; text-align: center;margin-top: 34px;color: grey;">设置</div>
+								</div>
+							</div>
+						</div>
+						<div id="ck2_2">
+							<div id="ck2_2_left">
+								<img src="tubiaoimg/portal-icon-4.png"/><br />
+								<a href="#" style="color: #337AB7;">修改头像</a>
+							</div>
+							<div id="ck2_2_right">
+								<div id="ck2_2_right1">
+									<span style="display: block;font-size: 20px; width: 700px;height: 50px;">基础资料<a href="#"  style="font-size: 16px; color: #337AB7;float: right;">编辑</a></span>
+									<span style="display: block;width: 700px;height: 30px;color: grey;">昵称：czxxzxz</span><br />
+									<span style="display: block;width: 700px;height: 30px;color: grey;">性别：女</span>
+								</div>
+								<div id="ck2_2_right2">
+									<span style="display: block;font-size: 20px; width: 700px;height: 50px;">高级设置</span>
+									<span style="display: block;width: 700px;height: 30px;color: grey;">银行卡<a href="#"  style="font-size: 16px; color: #337AB7;float: right;">管理</a></span><br />
+									<span style="display: block;width: 700px;height:50px;color: grey;">账号地区：中国</span>
+									<span style="display: block;width: 700px;height: 30px;color: grey;">数据权利中心<a href="#"  style="font-size: 16px; color: #337AB7;float: right;">管理</a></span>
+								</div>
+							</div>
+						</div>
+						<div id="ck2_3">
+							<div id="ck2_3_1">
+								<span id="sp1" style="font-size: 25px;margin-top: 30px;">绑定</span>
+								<span id="sp2"style="font-size: 16px; color: grey;">小米账号绑定的第三方账号，可用于直接登录小米网等网站</span>
+							</div>
+							<div id="ck2_3_2">
+								<div id="weibo">
+									<div style="float: left;margin-top: 30px;">
+										<img src="tubiaoimg/微博.png" />
+									</div>
+									<div style="float: left;margin-top: 30px;width: 100px;height: 100px;text-align: center;">
+										<span style="display: block;height: 10px;margin-top: 5px;">新浪微博</span><br />
+										<span style="display: block;height: 10px;color: grey;"><img src="tubiaoimg/感叹号.png"/>未绑定</span><br />
+										<a href="#" class="c" style="border: 1px solid gray; color: black;">添加绑定</a>
+									</div>
+								</div>
+								<div id="qq">
+									<div style="float: left;margin-top: 30px;">
+										<img src="tubiaoimg/qq.png" />
+									</div>
+									<div style="float: left;margin-top: 30px;width: 100px;height: 100px;text-align: center;">
+										<span style="display: block;height: 10px;margin-top: 5px;">QQ</span><br />
+										<span style="display: block;height: 10px;color: grey;"><img src="tubiaoimg/感叹号.png"/>未绑定</span><br />
+										<a href="#" class="c" style="border: 1px solid gray; color: black;">添加绑定</a>
+									</div>
+								</div>
+								<div id="weixin">
+									<div style="float: left;margin-top: 30px;">
+										<img src="tubiaoimg/微信.png" />
+									</div>
+									<div style="float: left;margin-top: 30px;width: 100px;height: 100px;text-align: center;">
+										<span style="display: block;height: 10px;margin-top: 5px;">微信</span><br />
+										<span style="display: block;height: 10px;color: grey;"><img src="tubiaoimg/对w勾.png"/>以绑定</span><br />
+										<a href="#" class="c" style="border: 1px solid gray; color: black; ">解除绑定</a>
+									</div>
+								</div>
+							</div>
+							<div id="ck2_3_3">
+								<span id="sp1" style="font-size: 25px;margin-top: 30px;">授权</span>
+								<span id="sp2"style="font-size: 16px; color: grey;">你已经授权以下应用访问您的部分账号信息</span>					
+							</div>
+							<div id="ck2_3_4">
+								暂未授权任何应用访问您的账号信息
+							</div>
+						</div>
+						<div id="ck2_4">
+							<div id="ck2_4_1">
+								<span id="sp1" style="font-size: 25px;margin-top: 30px;">您的账号可以登录以下服务</span>
+							</div>
+							<div id="ck2_4_2">
+								<div id="ck2_4_2_1">
+									<div style="width: 60px; height: 57px;margin-top: 12px; ;float: left;">
+										<img src="tubiaoimg/mi1PNG.PNG"/>
+									</div>
+									<div style="width:460px; height: 55px;margin-top: 15px;float: left;">
+										<span>小米官网</span><br />
+										<span style="color: grey;">小米手机，红米手机，小米平板和小米电视官方正品...</span>
+									</div>
+								</div>
+								<div id="ck2_4_2_2">
+									<div style="width: 60px; height: 57px;margin-top: 12px; ;float: left;">
+										<img src="tubiaoimg/mi6.PNG"/>
+									</div>
+									<div style="width:460px; height: 55px;margin-top: 15px;float: left;">
+										<span>MIUI</span><br />
+										<span style="color: grey;">发烧友必刷的Android ROM</span>
+									</div>
+								</div>
+								<div id="ck2_4_2_3">
+									<div style="width: 60px; height: 57px;margin-top: 12px; ;float: left;">
+										<img src="tubiaoimg/mi3.PNG"/>
+									</div>
+									<div style="width:460px; height: 55px;margin-top: 15px;float: left;">
+										<span>MIUI</span><br />
+										<span style="color: grey;">发烧友必刷的Android ROM</span>
+									</div>
+								</div>
+								<div id="ck2_4_2_4">
+									<div style="width: 60px; height: 57px;margin-top: 12px; ;float: left;">
+										<img src="tubiaoimg/mi4.PNG"/>
+									</div>
+									<div style="width:460px; height: 55px;margin-top: 15px;float: left;">
+										<span>MIUI</span><br />
+										<span style="color: grey;">发烧友必刷的Android ROM</span>
+									</div>
+								</div>
+								<div id="ck2_4_2_5">
+									<div style="width: 60px; height: 57px;margin-top: 12px; ;float: left;">
+										<img src="tubiaoimg/mi5.PNG"/>
+									</div>
+									<div style="width:460px; height: 55px;margin-top: 15px;float: left;">
+										<span>MIUI</span><br />
+										<span style="color: grey;">发烧友必刷的Android ROM</span>
+									</div>
+								</div>
+								<div id="ck2_4_2_6">
+									<div style="width: 60px; height: 57px;margin-top: 12px; ;float: left;">
+										<img src="tubiaoimg/mi7.PNG"/>
+									</div>
+									<div style="width:460px; height: 55px;margin-top: 15px;float: left;">
+										<span>MIUI</span><br />
+										<span style="color: grey;">发烧友必刷的Android ROM</span>
+									</div>
+								</div>
+								<div id="ck2_4_2_7">
+									<div style="width: 60px; height: 57px;margin-top: 12px; ;float: left;">
+										<img src="tubiaoimg/mi8.PNG"/>
+									</div>
+									<div style="width:460px; height: 55px;margin-top: 15px;float: left;">
+										<span>MIUI</span><br />
+										<span style="color: grey;">发烧友必刷的Android ROM</span>
+									</div>
+								</div>
+								<div id="ck2_4_2_8">
+									<div style="width: 60px; height: 57px;margin-top: 12px; ;float: left;">
+										<img src="tubiaoimg/mi9.PNG"/>
+									</div>
+									<div style="width:460px; height: 55px;margin-top: 15px;float: left;">
+										<span>MIUI</span><br />
+										<span style="color: grey;">发烧友必刷的Android ROM</span>
+									</div>
+								</div>
+								<div id="ck2_4_2_9">
+									<div style="width: 60px; height: 57px;margin-top: 12px; ;float: left;">
+										<img src="tubiaoimg/mi2.PNG"/>
+									</div>
+									<div style="width:460px; height: 55px;margin-top: 15px;float: left;">
+										<span>MIUI</span><br />
+										<span style="color: grey;">发烧友必刷的Android ROM</span>
+									</div>
+								</div>
+								<div id="ck2_4_2_10">
+									<div style="width: 60px; height: 57px;margin-top: 12px; ;float: left;">
+										<img src="tubiaoimg/mi10.PNG"/>
+									</div>
+									<div style="width:460px; height: 55px;margin-top: 15px;float: left;">
+										<span>MIUI</span><br />
+										<span style="color: grey;">发烧友必刷的Android ROM</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div id="ck2_5">
+							<div id="ck2_5_1">
+								<span id="sp1" style="font-size: 25px;margin-top: 30px;">设备管理</span>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
